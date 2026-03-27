@@ -91,9 +91,9 @@ describe('GreenMonitor Unit Tests', () => {
 
     render(<App />, { wrapper: AppWrapper });
 
-    // НАМИСНИЙ БАГ: шукаємо НЕІСНУЮЧИЙ текст!
+/*    // НАМИСНИЙ БАГ: шукаємо НЕІСНУЮЧИЙ текст!
     await waitFor(() => {
       expect(screen.getByText('НЕІСНУЮЧА ТЕПЛИЦЯ')).toBeInTheDocument();
     }, { timeout: 3000 });
-  });
+  });*/
 });
