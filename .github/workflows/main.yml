@@ -39,6 +39,10 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      # Крок 5: Unit тести
+      - name: Unit tests
+        run: npm run test:unit
+
       # Крок 5: Збірка production
       - name: Build
         run: npm run build
