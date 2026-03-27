@@ -4,14 +4,19 @@ name: CI/CD Pipeline
 on:
   # Запуск при push у гілки main та develop
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - develop
   # Запуск при створенні Pull Request
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      - develop
 
 jobs:
   # Job для збірки та тестування
   build-and-test:
+    name: Build and Test
     runs-on: ubuntu-latest
 
     steps:
@@ -28,16 +33,12 @@ jobs:
 
       # Крок 3: Встановити залежності (npm ci = clean install з lock-файлом)
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       # Крок 4: ESLint перевірка стилю/синтаксису
       - name: Lint
         run: npm run lint
 
-#      # Крок 5: Unit тести
-#      - name: Unit tests
-#        run: npm run test:unit
-
-      # Крок 6: Збірка production
+      # Крок 5: Збірка production
       - name: Build
         run: npm run build
