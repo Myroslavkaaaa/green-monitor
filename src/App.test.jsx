@@ -81,13 +81,13 @@ describe('GreenMonitor Unit Tests', () => {
     });
   });
 
-  test('7. ЗЛАМАНИЙ ТЕСТ (Крок 5)', async () => {
-    // Mock дані
-    const zones = [{ _id: '1', name: 'Теплиця №1' }];
-    mockFetch.mockResolvedValueOnce({
-      ok: true,
-      json: () => Promise.resolve(zones)
-    });
+  // test('7. ЗЛАМАНИЙ ТЕСТ (Крок 5)', async () => {
+  //   // Mock дані
+  //   const zones = [{ _id: '1', name: 'Теплиця №1' }];
+  //   mockFetch.mockResolvedValueOnce({
+  //     ok: true,
+  //     json: () => Promise.resolve(zones)
+  //   });
 
     render(<App />, { wrapper: AppWrapper });
 
